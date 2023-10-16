@@ -16,5 +16,5 @@ int main()
     int term;
     cout<<"Enter the n term of the number"<<endl;
     cin>>term;
-   SumNeven(term); 
+    SumNeven(term); 
 }
