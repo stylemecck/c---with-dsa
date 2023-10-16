@@ -4,9 +4,9 @@ using namespace std;
 void SumEven(int num)
 {
     int sum;
-    for(int i=1; i<=num%2==0; i++)
+    for(int i=2; i<=num; i=i+2)
     {
-          sum=num*(num+1)/2;
+          sum+=i;
     }
     cout<<sum<<endl;
 }
