@@ -12,5 +12,4 @@ int main()
     cout<<"Enter the redius of circle"<<endl;
     cin>>term;
     CircleArea(term);
-    
 }
