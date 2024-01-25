@@ -1,32 +1,31 @@
 #include<iostream>
+#include<limits>
 using namespace std;
 
 //addition overflow check
 bool addOverflows(int a, int b) {
-    return(a+b)<a || (a+b) <b;
+    return (b > 0 && a > numeric_limits<int>::max() - b); 
 }
-
 //substraction overflows check.
 bool subOverflows(int a, int b) {
-    return (a-b) > a || (a-b) >b;
+    return (b < 0 && a > numeric_limits<int>::max() + b); 
 }
-
 //multiply overflows check
 bool mulOverflows(int a, int b) {
-    return (a*b)/b != a || (a*b)/a !=b;
+   return (a > 0 && b > 0 && a > numeric_limits<int>::max() / b) || (a < 0 && b < 0 && a < numeric_limits<int>::max() / b); 
 }
 
 //division overflows check
 bool divOverflows(int a, int b) {
-   return (a/b)*b != a || (a/b)*b != b;
+   return  (b == 0)||(a == numeric_limits<int>::min() && b == -1);
 }
 
 int main() {
-    int num1 = 21;                 
-    int num2 = 10;
+    int a = 2147483647;                 
+    int b = 1;
 
     //check over/underflows for addition
-    if(addOverflows(num1,num2)){
+    if(addOverflows(a,b)){
         cout<<"Addition Overflows"<<endl;
     }
     else {
@@ -34,7 +33,7 @@ int main() {
     }
 
     //check for substraction.
-    if(subOverflows(num1,num2)) {
+    if(subOverflows(a,b)) {
         cout<<"substraction Overflows"<<endl;
     }
     else {
@@ -42,7 +41,7 @@ int main() {
     }
 
     //check for multiplication
-    if(mulOverflows(num1, num2)) {
+    if(mulOverflows(a, b)) {
         cout<<"Multiplication Overflows"<<endl;
     }
     else {
@@ -50,7 +49,7 @@ int main() {
     }
 
     //check for division 
-    if(divOverflows(num1, num2)) {
+    if(divOverflows(a, b)) {
         cout<<"Division Overflows"<<endl;
     }
     else {
