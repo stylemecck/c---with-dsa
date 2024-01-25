@@ -13,7 +13,7 @@ bool subOverflows(int a, int b) {
 
 //multiply overflows check
 bool mulOverflows(int a, int b) {
-    return (a/b)*b != a || (a*b)/a !=b;
+    return (a*b)/b != a || (a*b)/a !=b;
 }
 
 //division overflows check
@@ -22,7 +22,7 @@ bool divOverflows(int a, int b) {
 }
 
 int main() {
-    int num1 = 21;
+    int num1 = 21;                 
     int num2 = 10;
 
     //check over/underflows for addition
