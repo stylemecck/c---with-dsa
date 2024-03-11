@@ -12,5 +12,5 @@ void Marks(int number){
     }
 }
 int main(){
-    Marks(40);
+    Marks(80);
 }

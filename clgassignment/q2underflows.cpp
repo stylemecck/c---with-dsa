@@ -21,8 +21,8 @@ bool divOverflows(int a, int b) {
 }
 
 int main() {
-    int a = 2147483647;                 
-    int b = 1;
+    int a = -1;                 
+    int b = 2147483647;
 
     //check over/underflows for addition
     if(addOverflows(a,b)){

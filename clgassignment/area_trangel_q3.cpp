@@ -1,4 +1,4 @@
-//area of the trangle using heroins law
+// area of the trangle using heroins law
 #include<iostream>
 #include<cmath>
 using namespace std;
